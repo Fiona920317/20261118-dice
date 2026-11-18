@@ -54,12 +54,12 @@
 }
 /***************************************************************/
 :root {
-  font-size: 2rem;
+  font-size: 1.5rem;
   @media (max-width: 1024px) {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   @media (max-width: 768px) {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 }
 .wrapper {
@@ -71,10 +71,7 @@
   flex-direction: column;
   align-items: center;
 
-  padding: 30px;
-}
-.web-title {
-  margin-bottom: 30px;
+  padding: 15px;
 }
 .game-content {
   width: 100%;
@@ -135,6 +132,7 @@
   flex: 1;
 
   padding: 10px;
+
   h2 {
     margin-bottom: 20px;
 
@@ -142,38 +140,39 @@
     justify-content: center;
   }
   .history {
-    height: 50px;
+    height: 40px;
     border-bottom: 0.5px solid gray;
 
     display: flex;
     justify-content: space-between;
-    .mini-dice-group,
-    .last-result {
-      display: flex;
-      align-items: center;
-    }
-    .mini-dice-group {
-      gap: 5px;
-    }
-    .mini-dice {
-      width: 40px;
-      height: 40px;
-      background-color: white;
-      border: 3px solid transparent;
-      border-radius: 5px;
+    align-items: center;
+  }
+  .mini-dice-group,
+  .last-result {
+    display: flex;
+    align-items: center;
+  }
+  .mini-dice-group {
+    gap: 5px;
+  }
+  .mini-dice {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 3px solid transparent;
+    border-radius: 5px;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .mini-dice.same {
-      border: 3px solid rgb(88, 152, 81);
-    }
-    .last-result {
-      display: none;
-    }
-    .last-result.active {
-      display: flex;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mini-dice.same {
+    border: 3px solid rgb(88, 152, 81);
+  }
+  .last-result {
+    opacity: 0;
+  }
+  .last-result.active {
+    opacity: 1;
   }
 }
