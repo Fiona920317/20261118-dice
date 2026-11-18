@@ -1,0 +1,179 @@
+/* 初始化 */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  list-style: none;
+  text-decoration: none;
+}
+/* container通用設定  */
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+
+  @media (max-width: 980px) {
+    max-width: none;
+    width: 100%;
+  }
+}
+/* 按鈕通用設定 */
+.btn {
+  /* 初始化按鈕樣式 */
+  border: 0;
+  background-color: transparent;
+  font-size: 1rem;
+  /* 客製化按鈕樣式 */
+  box-shadow: none;
+  box-shadow: 0 0 5px rgb(181, 181, 181);
+  cursor: pointer;
+
+  background-color: rgb(100, 200, 255);
+  border-radius: 10px;
+
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  &:hover {
+    box-shadow: 0 0 10px gray;
+    background-color: rgb(100, 180, 255);
+  }
+}
+/* 圖片通用設定 */
+.img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/***************************************************************/
+:root {
+  font-size: 2rem;
+  @media (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #e9d2f4;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 30px;
+}
+.web-title {
+  margin-bottom: 30px;
+}
+.game-content {
+  width: 100%;
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+.interactable-area {
+  display: flex;
+  flex: 1.5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  .dice-group {
+    display: flex;
+    gap: 20px;
+  }
+  .dice {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border: 5px solid transparent;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+  }
+  .dice.same {
+    border: 5px solid rgb(88, 152, 81);
+  }
+
+  @media (max-width: 1024px) {
+    .dice {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  @media (max-width: 768px) {
+    .dice {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.history-area {
+  flex: 1;
+
+  padding: 10px;
+  h2 {
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+  }
+  .history {
+    height: 50px;
+    border-bottom: 0.5px solid gray;
+
+    display: flex;
+    justify-content: space-between;
+    .mini-dice-group,
+    .last-result {
+      display: flex;
+      align-items: center;
+    }
+    .mini-dice-group {
+      gap: 5px;
+    }
+    .mini-dice {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border: 3px solid transparent;
+      border-radius: 5px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mini-dice.same {
+      border: 3px solid rgb(88, 152, 81);
+    }
+    .last-result {
+      display: none;
+    }
+    .last-result.active {
+      display: flex;
+    }
+  }
+}
